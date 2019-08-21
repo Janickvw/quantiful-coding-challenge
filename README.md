@@ -11,6 +11,8 @@ Due to some time conflicts with current university assigments I was unable to fi
 Hope you enjoy using my version of the challenge :)
 Thanks!
 
+p.s. there is an error in the console. This isn't of concern just waiting to be fixed in material-table: https://github.com/mbrn/material-table/issues/657
+
 To begin:
 
 ```
