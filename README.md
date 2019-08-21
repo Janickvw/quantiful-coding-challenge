@@ -6,7 +6,7 @@ Summary: This challange was quite fun as I hadn't done react in a while and it w
 
 In my implemenation of this challenge, I managed to incorperate the following features: > The ability to sort in either ascending or descending order by ID, Index, Country, Value, Store and Returned status. > Search bar which searches all of the fields for the inputted text. > Seperate search filtering for ID. > Ability to filter by items return status, country and different stores.
 
-Due to some time conflicts with current university assigments I was unable to finish the ability to change to currency the sales are viewed in.
+Due to some time conflicts with current university assigments I was unable to finish the ability to change the currency the sales are viewed in.
 
 Hope you enjoy using my version of the challenge :)
 Thanks!
