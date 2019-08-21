@@ -46,6 +46,7 @@ const tableIcons = {
 
 export default class StoreDataMaterialTable extends Component {
   render() {
+    let currentlySelectedRate = 0;
     let storeData = this.props.data.map(elem => {
       return {
         ...elem,
@@ -56,6 +57,12 @@ export default class StoreDataMaterialTable extends Component {
     let countryLookups = {};
     let storeLookups = {};
     let returnedLookups = {};
+    let currencies = [];
+
+    currencies.push(this.props.rates.base);
+    Object.keys(this.props.rates.rates).forEach(value =>
+      currencies.push(value)
+    );
 
     storeData.forEach(elem => {
       let { country, store, returned } = elem;
@@ -85,7 +92,7 @@ export default class StoreDataMaterialTable extends Component {
             }
           ]}
           data={storeData}
-          title={"Store Data"}
+          title={`Store Data (${this.props.rates.base})`}
           options={{
             filtering: true
           }}
@@ -93,7 +100,14 @@ export default class StoreDataMaterialTable extends Component {
             {
               icon: AttachMoneyIcon,
               tooltip: "Toggle Currency",
-              onClick: (event, rowData) => alert("You saved " + rowData.name)
+              onClick: (event, rowData) => {
+                currentlySelectedRate += 1;
+                let title = document.querySelector(
+                  "h6.MuiTypography-root.MuiTypography-h6"
+                );
+                let newCurrency = currencies[currentlySelectedRate % 3];
+                title.innerText = `Store Data (${newCurrency})`;
+              }
             }
           ]}
         />
